@@ -33,42 +33,42 @@ public class CompraDaoJdbcTest extends TestCase {
         assertEquals(expResult, result);
     }
 
-//    public void testUpdate() {
-//        System.out.println("update");
-//        Ordencompra cliente = new Ordencompra("TERROR",2);
-//        OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
-//        Ordencompra expResult = cliente;
-//        Ordencompra result = instance.update(cliente);       
-//        assertEquals(expResult, result);  
-//
-//    }
-//
-//    public void testDelete() {
-//        System.out.println("delete");
-//        Ordencompra orden = new Ordencompra(5);
-//        orden.getIdcompra();
-//        OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
-//        instance.delete(orden);    
-//    }
-//
-//    public void testFindById() {
-//        System.out.println("findById");
-//        Integer IdOrden = 1;
-//        OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
-//        Ordencompra expResult = null;
-//        Ordencompra result = instance.findById(IdOrden);
-//        assertEquals(expResult, result);
-//        
-//        
-//    }
-//
-//    public void testFindAll() {
-//        System.out.println("findAll");
-//        OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
-//        List expResult = null;
-//        List result = instance.findAll();
-//        assertEquals(expResult, result);
-//       
-//    }
+    public void testUpdate() {
+        System.out.println("update");
+        Compra compra = new Compra("JESO09",3);
+        CompraDaoJdbc instance = new CompraDaoJdbc();
+        Compra expResult = compra;
+        Compra result = instance.update(compra);       
+        assertEquals(expResult, result);  
+
+    }
+
+    public void testDelete() {
+        System.out.println("delete");
+        Compra compra = new Compra(5);
+        compra.getIdcompra();
+        CompraDaoJdbc instance = new CompraDaoJdbc();
+        instance.delete(compra);    
+    }
+
+    public void testFindById() {
+        System.out.println("findById");
+        Integer Idcompra = 1;
+        CompraDaoJdbc instance = new CompraDaoJdbc();
+        Compra expResult = null;
+        Compra result = instance.findById(Idcompra);
+        assertEquals(expResult, result);
+        
+        
+    }
+
+    public void testFindAll() {
+        System.out.println("findAll");
+        CompraDaoJdbc instance = new CompraDaoJdbc();
+        List expResult = null;
+        List result = instance.findAll();
+        assertEquals(expResult, result);
+       
+    }
 }
 
