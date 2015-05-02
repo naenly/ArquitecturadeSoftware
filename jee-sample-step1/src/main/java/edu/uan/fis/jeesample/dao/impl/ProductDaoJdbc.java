@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+//jhon alejandro leon sissa
 /**
  * Product DAO implementation using JDBC
  */
@@ -172,7 +172,7 @@ public class ProductDaoJdbc implements ProductDao {
         }
         return p;
     }
-    
+ 
     
     
     public List<Product> findAll() {
