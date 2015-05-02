@@ -38,7 +38,7 @@ public class Product implements Serializable {
         this.productId = productId;
     }
     
-    public int getPrecio(){
+    public Integer getPrecio(){
     return precio;
     }
     
