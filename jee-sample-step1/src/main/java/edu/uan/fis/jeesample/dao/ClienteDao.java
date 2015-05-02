@@ -10,7 +10,7 @@ public interface ClienteDao {
     Cliente create(Cliente cliente);
     Cliente update(Cliente cliente);
     void delete(Cliente cliente);
-    Cliente findById(String contraseña);
+    Cliente findById(String usuario);
     List<Cliente> findAll();
   
 }

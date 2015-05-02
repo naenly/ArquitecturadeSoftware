@@ -127,7 +127,7 @@ public class ClienteDaojdbc implements ClienteDao {
     }
 
     @Override
-    public Cliente findById(String contraseña) {
+    public Cliente findById(String usuario) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs= null;
@@ -141,7 +141,7 @@ public class ClienteDaojdbc implements ClienteDao {
             //stmt =conn.createStatement();
             //stmt.executeUpdate("SELECT * FROM  PRODUCTS WHERE ID_PRODUCT = " + productId.intValue());
             stmt = conn.prepareStatement("SELECT * FROM  CLIENTE WHERE USUARIO = ?");
-            stmt.setString(1, contraseña);
+            stmt.setString(1, usuario);
             stmt.executeUpdate();    
             rs = stmt.executeQuery();
             while(rs.next()){

@@ -9,6 +9,16 @@ public Integer getIdcompra(){
 return Idcompra;
 }    
  
+public Ordencompra(){}
+
+public Ordencompra(int IdOrden){
+this.Idcompra=IdOrden;
+}
+public Ordencompra( String nombre, int Idcompra){
+    this.Idcompra=Idcompra;
+    this.nombre=nombre;
+}
+
 public void setIdcompra(Integer Idcompra){
 this.Idcompra=Idcompra;
 }

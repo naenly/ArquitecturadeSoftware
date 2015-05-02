@@ -5,9 +5,9 @@ import edu.uan.fis.jeesample.dto.Ordencompra;
 import java.util.List;
 
 public interface OrdencompraDao {
-    Ordencompra create(Ordencompra cliente);
-    Ordencompra  update(Ordencompra  cliente);
-    void delete(Ordencompra  cliente);
-    Ordencompra  findById(String contraseña);
-    List<Ordencompra > findAll();
+    Ordencompra create(Ordencompra orden);
+    Ordencompra  update(Ordencompra  orden);
+    void delete(Ordencompra  orden);
+    Ordencompra  findById(Integer IdOrden);
+    List<Ordencompra> findAll();
 }
