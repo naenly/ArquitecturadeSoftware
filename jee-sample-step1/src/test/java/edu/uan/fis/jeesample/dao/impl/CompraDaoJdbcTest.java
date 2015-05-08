@@ -24,9 +24,8 @@ public class CompraDaoJdbcTest extends TestCase {
     public void testCreate() {
         System.out.println("create");
         Compra compra = new Compra();
-        compra.setIdcompra(1);
-        compra.setNombrecliente("ALEJO07");
-        
+        compra.setIdproducto(2);
+        compra.setUsuario("JALS");   
         CompraDaoJdbc instance = new CompraDaoJdbc();
         Compra expResult = compra;
         Compra result = instance.create(compra);
@@ -35,7 +34,7 @@ public class CompraDaoJdbcTest extends TestCase {
 
     public void testUpdate() {
         System.out.println("update");
-        Compra compra = new Compra("JESO09",3);
+        Compra compra = new Compra(3, "Alejo007");
         CompraDaoJdbc instance = new CompraDaoJdbc();
         Compra expResult = compra;
         Compra result = instance.update(compra);       
@@ -45,18 +44,18 @@ public class CompraDaoJdbcTest extends TestCase {
 
     public void testDelete() {
         System.out.println("delete");
-        Compra compra = new Compra(5);
-        compra.getIdcompra();
+        Compra compra = new Compra("PIOLA34");
+        compra.getUsuario();
         CompraDaoJdbc instance = new CompraDaoJdbc();
         instance.delete(compra);    
     }
 
     public void testFindById() {
         System.out.println("findById");
-        Integer Idcompra = 1;
+        String usuario = "JALS32";
         CompraDaoJdbc instance = new CompraDaoJdbc();
         Compra expResult = null;
-        Compra result = instance.findById(Idcompra);
+        Compra result = instance.findByUsuario(usuario);
         assertEquals(expResult, result);
         
         
@@ -66,7 +65,7 @@ public class CompraDaoJdbcTest extends TestCase {
         System.out.println("findAll");
         CompraDaoJdbc instance = new CompraDaoJdbc();
         List expResult = null;
-        List result = instance.findAll();
+        List result = instance.findAllUsuario();
         assertEquals(expResult, result);
        
     }

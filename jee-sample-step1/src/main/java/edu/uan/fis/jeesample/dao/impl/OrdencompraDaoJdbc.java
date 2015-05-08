@@ -32,9 +32,9 @@ public class OrdencompraDaoJdbc implements OrdencompraDao {
             // 3. Creates the product in the database
             //stmt = conn.createStatement();
             //stmt.executeUpdate("INSERT INTO PRODUCTS VALUES(" + product.getProductId() + ",'" + product.getName() + "')");
-            stmt = conn.prepareStatement("INSERT INTO ORDENCOMPRA (ID_ORDEN, NOMBRE) VALUES ( ?, ?) ");
+            stmt = conn.prepareStatement("INSERT INTO ORDENCOMPRA (ID_ORDEN, USUARIO) VALUES ( ?, ?) ");
             stmt.setInt(1, orden.getIdcompra());
-            stmt.setString(2, orden.getNombre());
+            stmt.setString(2, orden.getUsuario());
             stmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ProductDaoJdbc.class.getName()).log(Level.SEVERE, null, ex);
@@ -67,8 +67,8 @@ public class OrdencompraDaoJdbc implements OrdencompraDao {
             // 2. Get the connection for the URL jdbc:mysql://address:port/dbname?user=username&password=userpassword
             conn = DriverManager.getConnection("jdbc:mysql://localhost/electiva1" , "root", "blackjals");
             // 3. Creates the product in the database
-            stmt = conn.prepareStatement("UPDATE ORDENCOMPRA SET  NOMBRE =?  WHERE ID_ORDEN= ?");  
-            stmt.setString(1, orden.getNombre());
+            stmt = conn.prepareStatement("UPDATE ORDENCOMPRA SET  USUARIO =?  WHERE ID_ORDEN= ?");  
+            stmt.setString(1, orden.getUsuario());
             stmt.setInt(2, orden.getIdcompra());
             stmt.executeUpdate();
             
@@ -130,7 +130,7 @@ public class OrdencompraDaoJdbc implements OrdencompraDao {
     }
 
     @Override
-    public Ordencompra findById(Integer IdOrden) {
+    public Ordencompra findById_Ordencompra(Integer IdOrden) {
          Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs= null;
@@ -149,8 +149,8 @@ public class OrdencompraDaoJdbc implements OrdencompraDao {
             rs = stmt.executeQuery();
             while(rs.next()){
             o = new Ordencompra();
-            o.setIdcompra(rs.getInt("ID_ORDEN"));
-            o.setNombre(rs.getString("NOMBRE"));
+            o.setIdorden(rs.getInt("ID_ORDEN"));
+            o.setUsuario(rs.getString("USUARIO"));
                 
 
             }
@@ -176,7 +176,7 @@ public class OrdencompraDaoJdbc implements OrdencompraDao {
     }
 
     @Override
-    public List<Ordencompra> findAll() {
+    public List<Ordencompra> findAllId_Ordencompra() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs= null;
@@ -193,8 +193,8 @@ public class OrdencompraDaoJdbc implements OrdencompraDao {
             rs = stmt.executeQuery();
             while(rs.next()){
             Ordencompra p = new Ordencompra();
-            p.setIdcompra(rs.getInt("ID_ORDEN"));
-            p.setNombre(rs.getString("NOMBRE"));
+            p.setIdorden(rs.getInt("ID_ORDEN"));
+            p.setUsuario(rs.getString("USUARIO"));
             o.add(p);
             }
           

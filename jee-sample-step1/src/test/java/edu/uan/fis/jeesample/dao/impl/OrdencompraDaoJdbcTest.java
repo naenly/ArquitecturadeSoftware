@@ -24,8 +24,8 @@ public class OrdencompraDaoJdbcTest extends TestCase {
     public void testCreate() {
         System.out.println("create");
         Ordencompra orden = new Ordencompra();
-        orden.setIdcompra(1);
-        orden.setNombre("SURVIVALHORROR");
+        orden.setIdorden(1);
+        orden.setUsuario("JALS34");
         
         OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
         Ordencompra expResult = orden;
@@ -35,7 +35,7 @@ public class OrdencompraDaoJdbcTest extends TestCase {
 
     public void testUpdate() {
         System.out.println("update");
-        Ordencompra cliente = new Ordencompra("TERROR",2);
+        Ordencompra cliente = new Ordencompra("JALS",1);
         OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
         Ordencompra expResult = cliente;
         Ordencompra result = instance.update(cliente);       
@@ -56,7 +56,7 @@ public class OrdencompraDaoJdbcTest extends TestCase {
         Integer IdOrden = 1;
         OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
         Ordencompra expResult = null;
-        Ordencompra result = instance.findById(IdOrden);
+        Ordencompra result = instance.findById_Ordencompra(IdOrden);
         assertEquals(expResult, result);
         
         
@@ -66,7 +66,7 @@ public class OrdencompraDaoJdbcTest extends TestCase {
         System.out.println("findAll");
         OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
         List expResult = null;
-        List result = instance.findAll();
+        List result = instance.findAllId_Ordencompra();
         assertEquals(expResult, result);
        
     }

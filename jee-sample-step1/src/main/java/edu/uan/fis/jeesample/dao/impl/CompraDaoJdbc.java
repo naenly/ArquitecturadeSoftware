@@ -28,9 +28,9 @@ public class CompraDaoJdbc implements CompraDao{
             // 3. Creates the product in the database
             //stmt = conn.createStatement();
             //stmt.executeUpdate("INSERT INTO PRODUCTS VALUES(" + product.getProductId() + ",'" + product.getName() + "')");
-            stmt = conn.prepareStatement("INSERT INTO COMPRA (ID_COMPRA, NOMBRECLIENTE) VALUES ( ?, ?) ");
-            stmt.setInt(1, compra.getIdcompra());
-            stmt.setString(2, compra.getNombrecliente());
+            stmt = conn.prepareStatement("INSERT INTO COMPRA (ID_PRODUCT, USUARIO) VALUES ( ?, ?) ");
+            stmt.setInt(1, compra.getIdproducto());
+            stmt.setString(2, compra.getUsuario());
             stmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ProductDaoJdbc.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,9 +63,9 @@ public class CompraDaoJdbc implements CompraDao{
             // 2. Get the connection for the URL jdbc:mysql://address:port/dbname?user=username&password=userpassword
             conn = DriverManager.getConnection("jdbc:mysql://localhost/electiva1" , "root", "blackjals");
             // 3. Creates the product in the database
-            stmt = conn.prepareStatement("UPDATE COMPRA SET  NOMBRECLIENTE =?  WHERE ID_COMPRA= ?");  
-            stmt.setString(1, compra.getNombrecliente());
-            stmt.setInt(2, compra.getIdcompra());
+            stmt = conn.prepareStatement("UPDATE COMPRA SET  ID_PRODUCT =?  WHERE USUARIO= ?");  
+            stmt.setInt(1, compra.getIdproducto());
+            stmt.setString(2, compra.getUsuario());
             stmt.executeUpdate();
             
             
@@ -102,8 +102,8 @@ public class CompraDaoJdbc implements CompraDao{
             // 3. Creates the product in the database
             //stmt = conn.createStatement();
             //stmt.executeUpdate("DELETE FROM PRODUCTS WHERE ID_PRODUCT=" + product.getProductId());
-            stmt= conn.prepareStatement("DELETE FROM COMPRA WHERE ID_COMPRA = ?");
-            stmt.setInt(1, compra.getIdcompra());
+            stmt= conn.prepareStatement("DELETE FROM COMPRA WHERE USUARIO = ?");
+            stmt.setString(1, compra.getUsuario());
             stmt.executeUpdate();
             
         } catch (SQLException ex) {
@@ -125,7 +125,7 @@ public class CompraDaoJdbc implements CompraDao{
     }
 
     @Override
-    public Compra findById(Integer Idcompra) {
+    public Compra findByUsuario(String Usuario) {
        Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs= null;
@@ -138,14 +138,14 @@ public class CompraDaoJdbc implements CompraDao{
             // 3. Creates the product in the database
             //stmt =conn.createStatement();
             //stmt.executeUpdate("SELECT * FROM  PRODUCTS WHERE ID_PRODUCT = " + productId.intValue());
-            stmt = conn.prepareStatement("SELECT * FROM  COMPRA WHERE ID_COMPRA = ?");
-            stmt.setInt(1, Idcompra);
+            stmt = conn.prepareStatement("SELECT * FROM  COMPRA WHERE USUARIO = ?");
+            stmt.setString(1, Usuario);
             stmt.executeUpdate();
             rs = stmt.executeQuery();
             while(rs.next()){
             o = new Compra();
-            o.setIdcompra(rs.getInt("ID_COMPRA"));
-            o.setNombrecliente(rs.getString("NOMBRECLIENTE"));
+            o.setIdproducto(rs.getInt("ID_PRODUCT"));
+            o.setUsuario(rs.getString("USUARIO"));
                 
 
             }
@@ -171,7 +171,7 @@ public class CompraDaoJdbc implements CompraDao{
     }
 
     @Override
-    public List<Compra> findAll() {
+    public List<Compra> findAllUsuario() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs= null;
@@ -188,8 +188,8 @@ public class CompraDaoJdbc implements CompraDao{
             rs = stmt.executeQuery();
             while(rs.next()){
             Compra p = new Compra();
-            p.setIdcompra(rs.getInt("ID_COMPRA"));
-            p.setNombrecliente(rs.getString("NOMBRECLIENTE"));
+            p.setIdproducto(rs.getInt("ID_PRODUCT"));
+            p.setUsuario(rs.getString("USUARIO"));
             o.add(p);
             }
           

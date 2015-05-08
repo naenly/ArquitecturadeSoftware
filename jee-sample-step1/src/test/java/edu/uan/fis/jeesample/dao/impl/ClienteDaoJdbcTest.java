@@ -55,7 +55,7 @@ public class ClienteDaoJdbcTest extends TestCase {
         String contraseña = "JALS";
         ClienteDaojdbc instance = new ClienteDaojdbc();
         Cliente expResult = null;
-        Cliente result = instance.findById(contraseña);
+        Cliente result = instance.findByUsuario(contraseña);
         assertEquals(expResult, result);
         
         
@@ -65,7 +65,7 @@ public class ClienteDaoJdbcTest extends TestCase {
         System.out.println("findAll");
         ClienteDaojdbc instance = new ClienteDaojdbc();
         List expResult = null;
-        List result = instance.findAll();
+        List result = instance.findAllUsuario();
         assertEquals(expResult, result);
        
     }

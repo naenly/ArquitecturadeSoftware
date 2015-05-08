@@ -127,7 +127,7 @@ public class ClienteDaojdbc implements ClienteDao {
     }
 
     @Override
-    public Cliente findById(String usuario) {
+    public Cliente findByUsuario(String usuario) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs= null;
@@ -171,7 +171,7 @@ public class ClienteDaojdbc implements ClienteDao {
     }
 
     @Override
-    public List<Cliente> findAll() {
+    public List<Cliente> findAllUsuario() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs= null;

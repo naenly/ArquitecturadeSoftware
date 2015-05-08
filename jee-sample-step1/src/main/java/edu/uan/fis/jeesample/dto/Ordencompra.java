@@ -4,33 +4,33 @@ package edu.uan.fis.jeesample.dto;
 import java.io.Serializable;
 
 public class Ordencompra implements Serializable {
-    private Integer Idcompra;
-    private String nombre;
+    private Integer Idorden;
+    private String usuario;
     
 public Integer getIdcompra(){
-return Idcompra;
+return Idorden;
 }    
  
 public Ordencompra(){}
 
 public Ordencompra(int IdOrden){
-this.Idcompra=IdOrden;
+this.Idorden=IdOrden;
 }
-public Ordencompra( String nombre, int Idcompra){
-    this.Idcompra=Idcompra;
-    this.nombre=nombre;
-}
-
-public void setIdcompra(Integer Idcompra){
-this.Idcompra=Idcompra;
+public Ordencompra( String usuario, int Idcompra){
+    this.Idorden=Idcompra;
+    this.usuario=usuario;
 }
 
-public String getNombre(){
-return nombre;
+public void setIdorden(Integer Idcompra){
+this.Idorden=Idcompra;
 }
 
-public void setNombre(String nombre){
-this.nombre=nombre;
+public String getUsuario(){
+return usuario;
+}
+
+public void setUsuario(String nombre){
+this.usuario=nombre;
 }
 
 

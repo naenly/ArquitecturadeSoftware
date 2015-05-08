@@ -8,7 +8,7 @@ public interface CompraDao {
     Compra create(Compra compra);
     Compra  update(Compra  compra);
     void delete(Compra  compra);
-    Compra  findById(Integer Idcompra);
-    List<Compra> findAll();
+    Compra  findByUsuario(String Usuario);
+    List<Compra> findAllUsuario();
     
 }
