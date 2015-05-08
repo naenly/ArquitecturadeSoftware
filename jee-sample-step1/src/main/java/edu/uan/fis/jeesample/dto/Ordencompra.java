@@ -1,7 +1,9 @@
 
 package edu.uan.fis.jeesample.dto;
 
-public class Ordencompra {
+import java.io.Serializable;
+
+public class Ordencompra implements Serializable {
     private Integer Idcompra;
     private String nombre;
     
@@ -30,6 +32,8 @@ return nombre;
 public void setNombre(String nombre){
 this.nombre=nombre;
 }
+
+
 
 
 }

@@ -1,8 +1,10 @@
 
 package edu.uan.fis.jeesample.dto;
 
+import java.io.Serializable;
 
-public class Compra {
+
+public class Compra implements Serializable {
     private Integer Idcompra;
     private String nombrecliente;
     
