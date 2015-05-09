@@ -1,36 +1,36 @@
-package edu.uan.fis.jeesample.dao.impl;
+package edu.uan.fis.electiva1.dao.impl;
 
-import edu.uan.fis.jeesample.dao.ProductDao;
-import edu.uan.fis.jeesample.dto.Product;
+import edu.uan.fis.electiva.dao.ProductDao;
+//jhon alejandro leon sissa
+/**
+ * 
+ */
+
+import edu.uan.fis.electiva1.dto.Product;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import java.sql.SQLException;
-import java.sql.Statement;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//jhon alejandro leon sissa
-/**
- * Product DAO implementation using JDBC
- */
+
 public class ProductDaoJdbc implements ProductDao {
     
     public Product create(Product product) {
-        // Sample code
+        
         Connection conn = null;
-        //Statement stmt = null;
+        
         PreparedStatement stmt = null;
         try {
-            // 1. Register the JDBC driver
+            
             Class.forName("com.mysql.jdbc.Driver");
-            // 2. Get the connection for the URL jdbc:mysql://address:port/dbname?user=username&password=userpassword
+           
             conn = DriverManager.getConnection("jdbc:mysql://localhost/electiva1" , "root", "blackjals");
-            // 3. Creates the product in the database
-            //stmt = conn.createStatement();
-            //stmt.executeUpdate("INSERT INTO PRODUCTS VALUES(" + product.getProductId() + ",'" + product.getName() + "')");
+            
             stmt = conn.prepareStatement("INSERT INTO PRODUCTS (ID_PRODUCT, NOMBRE, PRECIO) VALUES ( ?, ?, ? ) ");
             stmt.setInt(1, product.getProductId());
             stmt.setString(2,product.getName());
@@ -56,16 +56,16 @@ public class ProductDaoJdbc implements ProductDao {
     }
     
     public Product update(Product product) {
-         // Sample code
+        
         Connection conn = null;
         PreparedStatement stmt = null;
         
         try {
-            // 1. Register the JDBC driver
+            
             Class.forName("com.mysql.jdbc.Driver");
-            // 2. Get the connection for the URL jdbc:mysql://address:port/dbname?user=username&password=userpassword
+            
             conn = DriverManager.getConnection("jdbc:mysql://localhost/electiva1" , "root", "blackjals");
-            // 3. Creates the product in the database
+            
             stmt = conn.prepareStatement("UPDATE PRODUCTS SET  NOMBRE=?, PRECIO=?  WHERE ID_PRODUCT= ?");  
             stmt.setString(1,product.getName());
             stmt.setInt(2, product.getPrecio());
@@ -93,18 +93,16 @@ public class ProductDaoJdbc implements ProductDao {
     }
     
     public void delete(Product product) {
-         // Sample code
+         
         Connection conn = null;
-        //Statement stmt = null;
+        
         PreparedStatement stmt=null;
         try {
-            // 1. Register the JDBC driver
+            
             Class.forName("com.mysql.jdbc.Driver");
-            // 2. Get the connection for the URL jdbc:mysql://address:port/dbname?user=username&password=userpassword
+            
             conn = DriverManager.getConnection("jdbc:mysql://localhost/electiva1" , "root", "blackjals");
-            // 3. Creates the product in the database
-            //stmt = conn.createStatement();
-            //stmt.executeUpdate("DELETE FROM PRODUCTS WHERE ID_PRODUCT=" + product.getProductId());
+           
             stmt= conn.prepareStatement("DELETE FROM PRODUCTS WHERE ID_PRODUCT = ?");
             stmt.setInt(1, product.getProductId());
             stmt.executeUpdate();
@@ -134,13 +132,13 @@ public class ProductDaoJdbc implements ProductDao {
         ResultSet rs= null;
         Product p= null;
         try {
-            // 1. Register the JDBC driver
+            
             Class.forName("com.mysql.jdbc.Driver");
-            // 2. Get the connection for the URL jdbc:mysql://address:port/dbname?user=username&password=userpassword
+            
             conn = DriverManager.getConnection("jdbc:mysql://localhost/electiva1" , "root", "blackjals");
-            // 3. Creates the product in the database
-            //stmt =conn.createStatement();
-            //stmt.executeUpdate("SELECT * FROM  PRODUCTS WHERE ID_PRODUCT = " + productId.intValue());
+           
+           
+           
             stmt = conn.prepareStatement("SELECT * FROM  PRODUCTS WHERE ID_PRODUCT = ?");
             stmt.setInt(1, productId);
             stmt.executeUpdate();
@@ -181,11 +179,11 @@ public class ProductDaoJdbc implements ProductDao {
         ResultSet rs= null;
         List<Product> l= null;
         try {
-            // 1. Register the JDBC driver
+            
             Class.forName("com.mysql.jdbc.Driver");
-            // 2. Get the connection for the URL jdbc:mysql://address:port/dbname?user=username&password=userpassword
+            
             conn = DriverManager.getConnection("jdbc:mysql://localhost/electiva1" , "root", "blackjals");
-            // 3. Creates the product in the database
+            
             
             stmt = conn.prepareStatement("SELECT * FROM  PRODUCTS");
             stmt.executeUpdate();

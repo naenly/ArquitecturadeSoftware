@@ -1,6 +1,7 @@
-package edu.uan.fis.jeesample.dao.impl;
+package edu.uan.fis.electiva1.dao.impl;
 
-import edu.uan.fis.jeesample.dto.Compra;
+import edu.uan.fis.electiva1.dao.impl.CompraDaoJdbc;
+import edu.uan.fis.electiva1.dto.Compra;
 import java.util.List;
 import static junit.framework.Assert.assertEquals;
 import junit.framework.TestCase;
@@ -24,8 +25,8 @@ public class CompraDaoJdbcTest extends TestCase {
     public void testCreate() {
         System.out.println("create");
         Compra compra = new Compra();
-        compra.setIdproducto(2);
-        compra.setUsuario("JALS");   
+        compra.setIdproducto(5);
+        compra.setUsuario("ALEJO07");   
         CompraDaoJdbc instance = new CompraDaoJdbc();
         Compra expResult = compra;
         Compra result = instance.create(compra);
@@ -34,7 +35,7 @@ public class CompraDaoJdbcTest extends TestCase {
 
     public void testUpdate() {
         System.out.println("update");
-        Compra compra = new Compra(3, "Alejo007");
+        Compra compra = new Compra(3, "PEPE");
         CompraDaoJdbc instance = new CompraDaoJdbc();
         Compra expResult = compra;
         Compra result = instance.update(compra);       
@@ -44,7 +45,7 @@ public class CompraDaoJdbcTest extends TestCase {
 
     public void testDelete() {
         System.out.println("delete");
-        Compra compra = new Compra("PIOLA34");
+        Compra compra = new Compra("ALEJO007");
         compra.getUsuario();
         CompraDaoJdbc instance = new CompraDaoJdbc();
         instance.delete(compra);    
@@ -65,7 +66,7 @@ public class CompraDaoJdbcTest extends TestCase {
         System.out.println("findAll");
         CompraDaoJdbc instance = new CompraDaoJdbc();
         List expResult = null;
-        List result = instance.findAllUsuario();
+        List result = instance.findAllCompra();
         assertEquals(expResult, result);
        
     }

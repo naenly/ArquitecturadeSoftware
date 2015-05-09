@@ -1,4 +1,4 @@
-package edu.uan.fis.jeesample.dto;
+package edu.uan.fis.electiva1.dto;
 
 
 

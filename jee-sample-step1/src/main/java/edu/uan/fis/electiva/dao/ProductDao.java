@@ -1,6 +1,6 @@
-package edu.uan.fis.jeesample.dao;
+package edu.uan.fis.electiva.dao;
 
-import edu.uan.fis.jeesample.dto.Product;
+import edu.uan.fis.electiva1.dto.Product;
 import java.util.List;
 
 public interface ProductDao {

@@ -1,6 +1,7 @@
-package edu.uan.fis.jeesample.dao.impl;
+package edu.uan.fis.electiva1.dao.impl;
 
-import edu.uan.fis.jeesample.dto.Ordencompra;
+import edu.uan.fis.electiva1.dao.impl.OrdencompraDaoJdbc;
+import edu.uan.fis.electiva1.dto.Ordencompra;
 import java.util.List;
 import static junit.framework.Assert.assertEquals;
 import junit.framework.TestCase;
@@ -24,8 +25,8 @@ public class OrdencompraDaoJdbcTest extends TestCase {
     public void testCreate() {
         System.out.println("create");
         Ordencompra orden = new Ordencompra();
-        orden.setIdorden(1);
-        orden.setUsuario("JALS34");
+        orden.setIdorden(1021);
+        orden.setUsuario("ALEJO07");
         
         OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
         Ordencompra expResult = orden;
@@ -35,7 +36,7 @@ public class OrdencompraDaoJdbcTest extends TestCase {
 
     public void testUpdate() {
         System.out.println("update");
-        Ordencompra cliente = new Ordencompra("JALS",1);
+        Ordencompra cliente = new Ordencompra("ALEJO07",5);
         OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
         Ordencompra expResult = cliente;
         Ordencompra result = instance.update(cliente);       
@@ -45,7 +46,7 @@ public class OrdencompraDaoJdbcTest extends TestCase {
 
     public void testDelete() {
         System.out.println("delete");
-        Ordencompra orden = new Ordencompra(5);
+        Ordencompra orden = new Ordencompra(3);
         orden.getIdcompra();
         OrdencompraDaoJdbc instance = new OrdencompraDaoJdbc();
         instance.delete(orden);    

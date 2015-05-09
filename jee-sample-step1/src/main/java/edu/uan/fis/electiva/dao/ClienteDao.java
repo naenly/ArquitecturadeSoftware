@@ -1,8 +1,8 @@
 
-package edu.uan.fis.jeesample.dao;
+package edu.uan.fis.electiva.dao;
 
 
-import edu.uan.fis.jeesample.dto.Cliente;
+import edu.uan.fis.electiva1.dto.Cliente;
 import java.util.List;
 
 

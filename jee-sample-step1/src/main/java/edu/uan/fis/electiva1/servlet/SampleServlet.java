@@ -1,4 +1,4 @@
-package edu.uan.fis.jeesample.servlet;
+package edu.uan.fis.electiva1.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

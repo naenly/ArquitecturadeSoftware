@@ -1,6 +1,7 @@
-package edu.uan.fis.jeesample.dao.impl;
+package edu.uan.fis.electiva1.dao.impl;
 
-import edu.uan.fis.jeesample.dto.Product;
+import edu.uan.fis.electiva1.dao.impl.ProductDaoJdbc;
+import edu.uan.fis.electiva1.dto.Product;
 import java.util.List;
 import junit.framework.TestCase;
 

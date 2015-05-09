@@ -1,7 +1,7 @@
 
-package edu.uan.fis.jeesample.dao;
+package edu.uan.fis.electiva.dao;
 
-import edu.uan.fis.jeesample.dto.Ordencompra;
+import edu.uan.fis.electiva1.dto.Ordencompra;
 import java.util.List;
 
 public interface OrdencompraDao {

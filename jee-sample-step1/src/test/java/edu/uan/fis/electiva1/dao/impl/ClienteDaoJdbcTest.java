@@ -1,6 +1,7 @@
-package edu.uan.fis.jeesample.dao.impl;
+package edu.uan.fis.electiva1.dao.impl;
 
-import edu.uan.fis.jeesample.dto.Cliente;
+import edu.uan.fis.electiva1.dao.impl.ClienteDaojdbc;
+import edu.uan.fis.electiva1.dto.Cliente;
 import java.util.List;
 import junit.framework.TestCase;
 
@@ -20,31 +21,31 @@ public class ClienteDaoJdbcTest extends TestCase {
         super.tearDown();
     }
 
-    public void testCreate() {
+    public void testCreate() throws Exception{
         System.out.println("create");
         Cliente cliente = new Cliente();
-        cliente.setUsuario("ALEJO07");
-        cliente.setConstraseña("JALS");
+        cliente.setUsuario("PEPE");
+        cliente.setConstraseña("HOLAMUNDO");
         
         ClienteDaojdbc instance = new ClienteDaojdbc();
         Cliente expResult = cliente;
         Cliente result = instance.create(cliente);
-        assertEquals(expResult, result);
+        assertEquals(expResult, result);    
     }
 
     public void testUpdate() {
         System.out.println("update");
-        Cliente cliente = new Cliente("HOLAMUNDO","PEPE");
+        Cliente cliente = new Cliente("CRAS34","CRASH");
         ClienteDaojdbc instance = new ClienteDaojdbc();
         Cliente expResult = cliente;
         Cliente result = instance.update(cliente);       
         assertEquals(expResult, result);  
-
+     
     }
 
     public void testDelete() {
         System.out.println("delete");
-        Cliente cliente = new Cliente("ROJAS01");
+        Cliente cliente = new Cliente("RASI");
         cliente.getUsuario();
         ClienteDaojdbc instance = new ClienteDaojdbc();
         instance.delete(cliente);    
