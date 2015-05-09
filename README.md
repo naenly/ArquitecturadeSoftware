@@ -1,7 +1,6 @@
 # ArquitecturadeSoftware
-El proyecto se basa en un catalogo de productos ya establecido de videojuegos, donde el cliente puede comprar y a partir de la compra se
-genera una orden de compra.  
-Casos de Uso
+El proyecto se basa en un catalogo de productos ya establecido de videojuegos, donde el cliente puede comprar estos productos y a partir de la compra se genera una orden de compra.  
+CASOS DE USO
 - Cuenta definida del cliente
 - Compra de productos
 - Catalogo de productos
