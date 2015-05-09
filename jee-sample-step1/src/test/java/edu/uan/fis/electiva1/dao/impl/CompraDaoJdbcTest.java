@@ -25,7 +25,7 @@ public class CompraDaoJdbcTest extends TestCase {
     public void testCreate() {
         System.out.println("create");
         Compra compra = new Compra();
-        compra.setIdproducto(5);
+        compra.setIdproducto(6);
         compra.setUsuario("ALEJO07");   
         CompraDaoJdbc instance = new CompraDaoJdbc();
         Compra expResult = compra;

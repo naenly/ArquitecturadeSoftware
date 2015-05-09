@@ -24,9 +24,9 @@ public class ProductDaoJdbcTest extends TestCase {
     public void testCreate() {
         System.out.println("create");
         Product product = new Product();
-        product.setProductId(1);
-        product.setName("RPG");
-        product.setPrecio(2000);
+        product.setProductId(6);
+        product.setName("NEEDFORSPEED");
+        product.setPrecio(50000);
         ProductDaoJdbc instance = new ProductDaoJdbc();
         Product expResult = product;
         Product result = instance.create(product);
@@ -35,7 +35,7 @@ public class ProductDaoJdbcTest extends TestCase {
 
     public void testUpdate() {
         System.out.println("update");
-        Product product = new Product(9,"ROL",2500);
+        Product product = new Product(5,"CASTLEVANIA",140000);
         ProductDaoJdbc instance = new ProductDaoJdbc();
         Product expResult = product;
         Product result = instance.update(product);       
@@ -45,7 +45,7 @@ public class ProductDaoJdbcTest extends TestCase {
 
     public void testDelete() {
         System.out.println("delete");
-        Product product = new Product(6);
+        Product product = new Product(7);
         product.getProductId();
         ProductDaoJdbc instance = new ProductDaoJdbc();
         instance.delete(product);    
